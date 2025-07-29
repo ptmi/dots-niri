@@ -18,4 +18,4 @@ git --git-dir=$HOME/.dots/ --work-tree=$HOME add /home/ptmi/.local/bin
 git --git-dir=$HOME/.dots/ --work-tree=$HOME commit -m 'Updates'
 
 
-git --git-dir=$HOME/.dots/ --work-tree=$HOME push origin master
+git --git-dir=$HOME/.dots/ --work-tree=$HOME push -f origin master
