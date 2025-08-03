@@ -15,6 +15,8 @@ sed -i '15s/#[^ ]*/#fab387",/' /home/ptmi/.config/quickshell/Common/Themes_temp/
 mv /home/ptmi/.config/quickshell/Common/Themes_temp/Theme.qml /home/ptmi/.config/quickshell/Common/
 
 sed -i '10s/#[^ ]*/#fab387;/' /home/ptmi/.config/rofi/themes/rounded-nord-dark.rasi
+sed -i '20s/#[^ ]*/#fab387;/' /home/ptmi/.config/rofi/wallSelect.rasi
+
 
 
 sed -i '71s/#[^ ]*/#fab387/' /home/ptmi/.config/kitty/current-theme.conf

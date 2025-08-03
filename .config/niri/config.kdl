@@ -7,7 +7,7 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
-
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww-daemon"
 // Or, if you built it by hand:
@@ -178,7 +178,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#f5c2e7"
+        active-color "#a6e3a1"
 
         // Color of the ring on inactive monitors.
         inactive-color "#505050"
@@ -383,7 +383,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+B {spawn "bash" "/home/ptmi/.config/rofi/theme.sh"; }
+    Mod+B {spawn "bash" "/home/ptmi/.config/rofi/wallpaper-launcher.sh"; }
     Mod+O repeat=false { toggle-overview; }
     Mod+E {spawn "thunar"; }
     Mod+Q { close-window; }

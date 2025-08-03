@@ -12,6 +12,8 @@ sed -i '181s/#[^ ]*/#a6e3a1"/' /home/ptmi/.config/niri/config.kdl
 
 #Rofi colors
 sed -i '10s/#[^ ]*/#a6e3a1;/' /home/ptmi/.config/rofi/themes/rounded-nord-dark.rasi
+sed -i '20s/#[^ ]*/#a6e3a1;/' /home/ptmi/.config/rofi/wallSelect.rasi
+
 
 #Kitty colors
 sed -i '71s/#[^ ]*/#a6e3a1/' /home/ptmi/.config/kitty/current-theme.conf
