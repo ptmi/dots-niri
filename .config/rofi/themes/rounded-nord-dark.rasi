@@ -1,0 +1,21 @@
+/* ROUNDED THEME FOR ROFI */
+/* EZ A Red */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
+@import "catppuccin-mocha"
+
+* {
+    bg0:    #313244;
+    bg1:    #45475a;
+    bg2:    #585b70;
+    bg3:    #89dceb;
+    fg0:    #D8DEE9;
+    fg1:    #ECEFF4;
+    fg2:    #D8DEE9;
+    fg3:    #4C566A;
+}
+
+@import "template/rounded-template.rasi"
+
+element selected {
+    text-color: @bg1;
+}

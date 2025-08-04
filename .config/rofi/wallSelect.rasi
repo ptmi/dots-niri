@@ -1,0 +1,144 @@
+// # z0mbi3 -  https://github.com/gh0stzk/dotfiles
+
+configuration {
+    modi:                        "dmenu";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    font:                        "JetBrainsMono NF Bold 11";
+
+    hover-select:				 false;
+	me-select-entry:			 "";
+	me-accept-entry:			 "MousePrimary";
+	debug: true;
+}
+
+//----- Global Properties -----//
+
+* {
+main-bg: #313244;
+main-fg: #45475a;
+select-bg: #89dceb;
+select-fg: #4C566A;
+}
+
+//----- Main Window -----//
+
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    width:                       70%;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     10px;
+    padding:                     0px;
+    border:                      3px;
+    border-radius:               5px;
+    border-color:                @select-bg;
+    background-color:            transparent;
+}
+
+//----- Main Box -----//
+
+mainbox {
+    enabled:                     true;
+    children:                    [ "listview" ];
+    background-color:            @main-bg;
+}
+
+//----- Listview -----//
+
+listview {
+    enabled:                     true;
+    columns:                     5;
+    lines:                       1;
+    spacing:                     50px;
+    padding:                     20px 20px;
+    cycle:                       true;
+    dynamic:                     false;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     true;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+}
+
+//----- Elements -----//
+
+element {
+    enabled:                     true;
+    orientation:                 horizontal;
+    size:                        500px;
+    spacing:                     0px;
+    padding:                     0px;
+    border-radius:               5px;
+    cursor:                      pointer;
+    background-color:            @main-bg;
+    children: [ element-icon ];
+}
+
+element-text {
+  background-color: transparent;
+  text-color: transparent;
+  font: "JetBrainsMono NF Bold 11";
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  height: 0px;
+}
+
+@media(max-aspect-ratio: 1.8) {
+    element {
+        orientation:             vertical;
+    }
+}
+
+
+element normal.normal {
+    background-color:            inherit;
+}
+
+element normal.urgent {
+    background-color:            inherit;
+}
+
+element normal.active {
+    background-color:            inherit;
+}
+
+
+element selected.urgent {
+    background-color:            inherit;
+}
+
+
+element alternate.normal {
+    background-color:            inherit;
+}
+
+element alternate.urgent {
+    background-color:            inherit;
+}
+
+element alternate.active {
+    background-color:            inherit;
+}
+
+element selected.normal {
+   background-color:            #a6adc8;
+   border:                      3px;
+   border-color:                #a6adc8;
+   // optional: define visible border
+   padding: 5px;                  // give space so it doesn't look cropped
+   border-radius: 5px;
+   margin: 3px;
+}
+
+element-icon {
+    size:                        500px;
+    cursor:                      inherit;
+    border-radius:               5px;
+    background-color:            transparent;
+}
+
