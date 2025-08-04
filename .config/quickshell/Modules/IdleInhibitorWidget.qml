@@ -20,6 +20,7 @@ Rectangle {
         id: shellProcess
         onExited: {
             inhibitorOn = !inhibitorOn
+            checkProcess.exec()
             console.log("Idle inhibitor toggled. Now:", inhibitorOn)
         }
 

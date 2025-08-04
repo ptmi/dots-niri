@@ -12,7 +12,7 @@ Singleton {
     // Theme definitions with complete Material 3 expressive color palettes
     property var themes: [{
         "name": "Blue",
-        "primary": "#a6e3a1",
+        "primary": "#fab387",
         "primaryText": "#cdd6f4",
         "primaryContainer": "#1976d2",
         "secondary": "#8ab4f8",
