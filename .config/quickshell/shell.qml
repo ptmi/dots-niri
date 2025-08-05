@@ -50,6 +50,7 @@ ShellRoot {
         id: notificationCenter
     }
 
+
     NotificationPopup {
         id: notificationPopup
     }

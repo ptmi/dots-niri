@@ -17,7 +17,7 @@ configuration {
 * {
 main-bg: #313244;
 main-fg: #45475a;
-select-bg: #89dceb;
+select-bg: #a6e3a1;
 select-fg: #4C566A;
 }
 
