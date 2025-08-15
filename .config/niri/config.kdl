@@ -13,9 +13,9 @@ spawn-at-startup "swww-daemon"
 // Or, if you built it by hand:
 // spawn-at-startup "~/path/to/code/target/release/xwayland-satellite"
 
-environment {
-    DISPLAY ":1"
-}
+//environment {
+ //  DISPLAY ":1"
+//}
 
 input {
     keyboard {
@@ -80,7 +80,7 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-/-output "eDP-1" {
+output "eDP-1" {
     // Uncomment this line to disable this output.
     // off
 
@@ -93,7 +93,7 @@ input {
     mode "1920x1080@144"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 2
+    scale 1
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -109,6 +109,13 @@ input {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     //position x=1280 y=0
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@60"
+    scale 1
+    transform "normal"
+    position x=960 y=0
 }
 
 cursor {
@@ -272,8 +279,9 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "quickshell"
+spawn-at-startup "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell"
 spawn-at-startup "sunsetr"
+//spawn-at-startup "docker" "run" "-d" "--network=host" "-v" "open-webui:/app/backend/data" "-e" "OLLAMA_BASE_URL=http://127.0.0.1:11434" "--name" "open-webuiiii" "--restart" "always" "ghcr.io/open-webui/open-webui:main"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -378,12 +386,20 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86MonBrightnessUp     allow-when-locked=true { spawn "brightnessctl" "set" "+960"; }
-    XF86MonBrightnessDown     allow-when-locked=true { spawn "brightnessctl" "set" "960-"; }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "audio" "increment" "3";
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "audio" "decrement" "3";
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "audio" "mute";
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "audio" "micmute";
+    }
+    XF86MonBrightnessUp     allow-when-locked=true { spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "brightness" "increment" "5" ""; }
+    XF86MonBrightnessDown     allow-when-locked=true { spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "brightness" "decrement" "5" ""; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,

@@ -1,5 +1,3 @@
-fastfetch
-
 function fish_prompt -d "Write out the prompt"
     # This shows up as USER@HOST /home/user/ >, with the directory colored
     # $USER and $hostname are set by fish, so you can just use them
@@ -14,11 +12,11 @@ if status is-interactive
 
 end
 
+fastfetch
+starship init fish | source
 
-alias pamcan pacman
-alias ls 'eza --icons'
-alias clear "printf '\033[2J\033[3J\033[1;1H'"
-    
+
+alias pamcan=pacman
 
 # function fish_prompt
 #   set_color cyan; echo (pwd)

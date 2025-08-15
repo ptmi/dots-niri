@@ -3,9 +3,10 @@
 SOCKET="unix:/tmp/mykitty"
 
 #Quickshell colors
-mv /home/ptmi/.config/quickshell/Common/Theme.qml /home/ptmi/.config/quickshell/Common/Themes_temp
-sed -i '15s/#[^ ]*/#89dceb",/' /home/ptmi/.config/quickshell/Common/Themes_temp/Theme.qml
-mv /home/ptmi/.config/quickshell/Common/Themes_temp/Theme.qml /home/ptmi/.config/quickshell/Common/
+mv /home/ptmi/.config/quickshell/DankMaterialShell/Common/Theme.qml /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp
+sed -i '15s/#[^ ]*/#89dceb",/' /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp/Theme.qml
+mv /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp/Theme.qml /home/ptmi/.config/quickshell/DankMaterialShell/Common/
+
 
 #Niri colors
 sed -i '181s/#[^ ]*/#89dceb"/' /home/ptmi/.config/niri/config.kdl
@@ -63,6 +64,7 @@ sed -e "s|__TEXT_ALPHA__|$TEXT_ALPHA|g" \
 sed -i '5s/#[^ ]*/#89dceb/' /home/ptmi/.config/hypr/hyprlock.conf
 
 
+qs -c /home/ptmi/.config/quickshell/DankMaterialShell ipc call wallpaper set /home/ptmi/Pictures/blue.jpg
 
 
 
