@@ -12,7 +12,7 @@ Singleton {
 
   property var themes: [{
       "name": "Blue",
-      "primary": "#a6e3a1",
+      "primary": "#fab387",
       "primaryText": "#ffffff",
       "primaryContainer": "#1976d2",
       "secondary": "#8ab4f8",

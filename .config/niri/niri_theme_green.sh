@@ -3,9 +3,11 @@
 SOCKET="unix:/tmp/mykitty"
 
 #Quickshell colors
-mv /home/ptmi/.config/quickshell/DankMaterialShell/Common/Theme.qml /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp
-sed -i '15s/#[^ ]*/#a6e3a1",/' /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp/Theme.qml
-mv /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp/Theme.qml /home/ptmi/.config/quickshell/DankMaterialShell/Common/
+mv /home/ptmi/.config/quickshell/dms/Common/Theme.qml /home/ptmi/.config/quickshell/dms/Common/Themes_temp
+mv /home/ptmi/.config/quickshell/dms/Common/StockThemes.js /home/ptmi/.config/quickshell/dms/Common/Themes_temp
+sed -i '8s/#[^ ]*/#a6e3a1",/' /home/ptmi/.config/quickshell/dms/Common/Themes_temp/StockThemes.js
+mv /home/ptmi/.config/quickshell/dms/Common/Themes_temp/StockThemes.js /home/ptmi/.config/quickshell/dms/Common/
+mv /home/ptmi/.config/quickshell/dms/Common/Themes_temp/Theme.qml /home/ptmi/.config/quickshell/dms/Common/
 
 #Niri colors
 sed -i '181s/#[^ ]*/#a6e3a1"/' /home/ptmi/.config/niri/config.kdl
@@ -65,7 +67,7 @@ sed -i '5s/#[^ ]*/#a6e3a1/' /home/ptmi/.config/hypr/hyprlock.conf
 
 swww img /home/ptmi/Pictures/hegyoldal.jpg --transition-step 3 --transition-type wipe --transition-fps 144
 
-qs -c /home/ptmi/.config/quickshell/DankMaterialShell ipc call wallpaper set /home/ptmi/Pictures/hegyoldal.jpg
+qs -c /home/ptmi/.config/quickshell/dms ipc call wallpaper set /home/ptmi/Pictures/hegyoldal.jpg
 
 
 

@@ -162,14 +162,7 @@ layout {
 
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
-    // This is because windows using client-side decorations can have an arbitrary shape.
-    //
-    // If you don't like that, you should uncomment `prefer-no-csd` below.
-    // Niri will draw focus ring and border *around* windows that agree to omit their
-    // client-side decorations.
-    //
-    // Alternatively, you can override it with a window rule called
-    // `draw-border-with-background`.
+
 
     // You can change how the focus ring looks.
     focus-ring {
@@ -279,7 +272,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell"
+spawn-at-startup "qs" "-c" "/home/ptmi/.config/quickshell/dms"
 spawn-at-startup "sunsetr"
 //spawn-at-startup "docker" "run" "-d" "--network=host" "-v" "open-webui:/app/backend/data" "-e" "OLLAMA_BASE_URL=http://127.0.0.1:11434" "--name" "open-webuiiii" "--restart" "always" "ghcr.io/open-webui/open-webui:main"
 
@@ -387,19 +380,19 @@ binds {
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume allow-when-locked=true {
-        spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "audio" "increment" "3";
+        spawn "qs" "-c" "/home/ptmi/.config/quickshell/dms" "ipc" "call" "audio" "increment" "3";
     }
     XF86AudioLowerVolume allow-when-locked=true {
-        spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "audio" "decrement" "3";
+        spawn "qs" "-c" "/home/ptmi/.config/quickshell/dms" "ipc" "call" "audio" "decrement" "3";
     }
     XF86AudioMute allow-when-locked=true {
-        spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "audio" "mute";
+        spawn "qs" "-c" "/home/ptmi/.config/quickshell/dms" "ipc" "call" "audio" "mute";
     }
     XF86AudioMicMute allow-when-locked=true {
-        spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "audio" "micmute";
+        spawn "qs" "-c" "/home/ptmi/.config/quickshell/dms" "ipc" "call" "audio" "micmute";
     }
-    XF86MonBrightnessUp     allow-when-locked=true { spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "brightness" "increment" "5" ""; }
-    XF86MonBrightnessDown     allow-when-locked=true { spawn "qs" "-c" "/home/ptmi/.config/quickshell/DankMaterialShell" "ipc" "call" "brightness" "decrement" "5" ""; }
+    XF86MonBrightnessUp     allow-when-locked=true { spawn "qs" "-c" "/home/ptmi/.config/quickshell/dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    XF86MonBrightnessDown     allow-when-locked=true { spawn "qs" "-c" "/home/ptmi/.config/quickshell/dms" "ipc" "call" "brightness" "decrement" "5" ""; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,

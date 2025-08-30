@@ -2,9 +2,11 @@
 
 SOCKET="unix:/tmp/kitty-$(id -u)"
 
-mv /home/ptmi/.config/quickshell/DankMaterialShell/Common/Theme.qml /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp
-sed -i '15s/#[^ ]*/#f38ba8",/' /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp/Theme.qml
-mv /home/ptmi/.config/quickshell/DankMaterialShell/Common/Themes_temp/Theme.qml /home/ptmi/.config/quickshell/DankMaterialShell/Common/
+mv /home/ptmi/.config/quickshell/dms/Common/Theme.qml /home/ptmi/.config/quickshell/dms/Common/Themes_temp
+mv /home/ptmi/.config/quickshell/dms/Common/StockThemes.js /home/ptmi/.config/quickshell/dms/Common/Themes_temp
+sed -i '8s/#[^ ]*/#f38ba8",/' /home/ptmi/.config/quickshell/dms/Common/Themes_temp/StockThemes.js
+mv /home/ptmi/.config/quickshell/dms/Common/Themes_temp/StockThemes.js /home/ptmi/.config/quickshell/dms/Common/
+mv /home/ptmi/.config/quickshell/dms/Common/Themes_temp/Theme.qml /home/ptmi/.config/quickshell/dms/Common/
 
 
 sed -i '181s/#[^ ]*/#f38ba8"/' /home/ptmi/.config/niri/config.kdl
@@ -75,5 +77,5 @@ sudo /usr/bin/papirus-folders -C cat-mocha-red --theme Papirus-Dark
 
 swww img /home/ptmi/Pictures/evening-sky.png --transition-step 3 --transition-type wipe --transition-fps 144
 
-qs -c /home/ptmi/.config/quickshell/DankMaterialShell ipc call wallpaper set /home/ptmi/Pictures/evening-sky.png
+qs -c /home/ptmi/.config/quickshell/dms ipc call wallpaper set /home/ptmi/Pictures/evening-sky.png
 
